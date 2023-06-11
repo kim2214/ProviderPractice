@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:make_provider/page/notifier_change.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => Counts()),
+    ], child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
