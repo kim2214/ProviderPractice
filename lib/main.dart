@@ -6,12 +6,12 @@ void main() {
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (_) => Counts()),
-    ], child: MyApp()),
+    ], child: const ProviderPractice()),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ProviderPractice extends StatelessWidget {
+  const ProviderPractice({super.key});
 
   // This widget is the root of your application.
 
@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(title: const Text('ProviderPractice')),
         body: Consumer<Counts>(
           child: GestureDetector(
             child: Column(
